@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+<script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+<link rel="stylesheet" href="css/style.css" />
+<title>Login</title>
+</head>
+<body class="text-center">
+	<header class="page-header wrapper">
+		<h1>
+			<a href="/"><img class="logo" src="images/logo.png"
+				alt="DignityCafeHome"></a>
+		</h1>
+		<nav>
+			<ul class="main-nav">
+				<li><a href="menu"> Menu</a></li>
+				<li><a href="acsess">Access</a></li>
+				<li><a href="login" class="btn btn--brown">予約する</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h1>Login</h1>
+	<form method="post">
+		<label>ユーザーID</label> <input type="text" /><br /> <br /> <label>パスワード</label>
+		<input type="password" /><br /> <br /> <a href=/rsv><button
+				class="btn btn--orange" type="submit">ログイン</button></a>
+	</form>
+	<br />
+	<a th:href="@{'/signup'}">新規登録はこちら</a>
+	<footer>
+		<div>
+			<p>Dignity Cafe</p>
+			<p>住所:尊厳区尊厳町1-5-1</p>
+			<p>e-mail:deignity@dignity.com</p>
+			<p>営業時間:今ここ</p>
+		</div>
+	</footer>
+</body>
+
+
+
+</html>

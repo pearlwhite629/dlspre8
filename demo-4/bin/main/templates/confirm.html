@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+		<header class="page-header wrapper">
+			<h1>
+				<a href="/"><img class="logo" src="images/logo.png"
+					alt="DignityCafeHome"></a>
+			</h1>
+			<nav>
+				<ul class="main-nav">
+					<li><a href="menu"> Menu</a></li>
+					<li><a href="acsess">Access</a></li>
+					<li><a href="login" class="btn btn--brown">予約する</a></li>
+				</ul>
+			</nav>
+		</header>
+	<h1>予約確認</h1>
+	<div th:object="${rsvForm}">
+		<p>日付:<span th:text = "*{date_day}"></span></p>
+		<p>時間:<span th:text = "*{date_time}"></span></p>
+		<p>人数:<span th:text = "*{count_heads}"></span></p>
+		<p>目的:<span th:text = "*{purpose}"></span></p>
+	</div>
+	<form action="/save" method="post" th:object="${rsvForm}">
+		<input type="hidden" th:field="*{date_day}"/>
+		<input type="hidden" th:field="*{date_time}"/>
+		<input type="hidden" th:field="*{count_heads}"/>
+		<input type="hidden" th:field="*{purpose}"/>
+		<input class="btn btn--orange" type="submit" value="送信する"/>
+		<input class="btn btn--orange" type="submit" value="戻る" formaction="/rsv" formmethod ="get"/>
+	</form>
+</body>
+</html>
